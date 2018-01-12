@@ -543,6 +543,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/FinalProject00357123/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/lib/ios/$(CONFIGURATION)-$(PLATFORM_NAME)\"";
 				OTHER_LDFLAGS = "-lLive2D";
@@ -564,6 +565,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREPROCESSOR_DEFINITIONS = L2D_TARGET_IPHONE_ES2;
 				INFOPLIST_FILE = "$(SRCROOT)/FinalProject00357123/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/lib/ios/$(CONFIGURATION)-$(PLATFORM_NAME)\"";
 				OTHER_LDFLAGS = "-lLive2D";

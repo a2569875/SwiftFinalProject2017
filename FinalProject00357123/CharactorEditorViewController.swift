@@ -27,7 +27,7 @@ class CharactorEditorViewController: UITableViewController, UIImagePickerControl
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         isChangeImage = true
         
-        headButton.setBackgroundImage(image, for: .normal)
+        UserDefineImage.setBackgroundImage(image, for: .normal)
         dismiss(animated: true, completion: nil)
         
     }
@@ -186,7 +186,7 @@ class CharactorEditorViewController: UITableViewController, UIImagePickerControl
             imageName = "\(Date().timeIntervalSinceReferenceDate)"
             if let imageName = imageName {
                 let url = Charactor.documentsDirectory.appendingPathComponent(imageName)
-                if let image = headButton.backgroundImage(for: .normal) {
+                if let image = UserDefineImage.backgroundImage(for: .normal) {
                     let data = UIImageJPEGRepresentation(image, 0.9)
                     try? data?.write(to: url)
                 }
