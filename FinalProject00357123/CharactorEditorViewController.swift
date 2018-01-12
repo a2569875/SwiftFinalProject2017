@@ -169,6 +169,9 @@ class CharactorEditorViewController: UITableViewController, UIImagePickerControl
         
         if preview_btm == sender as? UIButton  {
             if ModelName != nil {
+                guard ModelName! != "none" else{
+                    return false
+                }
                 return true
             }else{
                 return false
