@@ -1,3 +1,6 @@
+#pragma once
+#define _CRT_SECURE_NO_WARNINGS
+
 #ifndef Bridging_Header_h
 #define Bridging_Header_h
 
