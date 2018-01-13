@@ -15,6 +15,13 @@
 //C++的環境下必須include下述標頭檔。
 //#include <motion/EyeBlinkMotion.h>
 #import "motion/EyeBlinkMotion.h"
+
+//#include <Live2DMotion.h>
+#import "Live2DMotion.h"
+
+//#include <MotionQueueManager.h>
+#import "MotionQueueManager.h"
+
 #import "Live2DModelOpenGL.h"
 #import "UtSystem.h"
 
@@ -56,6 +63,86 @@
          */
         + (NSString *)live2DVersion {
             return [NSString stringWithUTF8String:live2d::Live2D::getVersionStr()];
+        }
+    @end
+
+/*
+ @interface Live2DMotionObj : NSObject
+ - (instancetype)initWithMotionPath:(NSString *)motionPath;
+ - (void)setFadeIn:(int)value;
+ - (void)setFadeOut:(int)value;
+ - (void)setLoop:(bool)value;
+ @end
+ */
+#pragma mark - Live2DMotionObj class
+    @interface Live2DMotionObj ()
+        @property (nonatomic, assign) live2d::Live2DMotion *live2DMotion;
+
+    @end
+
+    @implementation Live2DMotionObj
+        - (instancetype)initWithMotionPath:(NSString *)modelPath {
+            if (self = [super init]) {
+                /*
+                 播放動作需要使用Live2DMotion這個class。
+                 動作中會利用的資訊為副檔名「.mtn」的動作檔案。
+                 使用loadMotion函數讀取.mtn動作資訊。
+                 幾乎所有的平台都提供從檔案路徑讀取和位元組陣列讀取這2種讀取方法。
+                 */
+                //Live2DMotion motion = Live2DMotion::loadMotion( path );
+                _live2DMotion = live2d::Live2DMotion::loadMotion( [modelPath UTF8String] ) ;
+
+            }
+            return self;
+        }
+
+        - (void)setFadeIn:(int)value {
+            self->_live2DMotion->setFadeIn(value);
+        }
+
+        - (void)setFadeOut:(int)value {
+            self->_live2DMotion->setFadeOut(value);
+        }
+
+        - (void)setLoop:(bool)value {
+            self->_live2DMotion->setLoop(value);
+        }
+
+        - (void *)obj_ptr{
+            return self->_live2DMotion;
+        }
+    @end
+/*
+ @interface Live2DMotionAgent : NSObject
+ - (void)startMotion:(Live2DMotionObj *)motion value:(bool)value;
+ - (void)updateParam:(Live2DModelOpenGL *)model;
+ - (void)stopAllMotions;
+ @end
+ */
+#pragma mark - Live2DMotionAgent class
+    @interface Live2DMotionAgent ()
+        @property (nonatomic, assign) live2d::MotionQueueManager *live2DMotion;
+
+    @end
+
+    @implementation Live2DMotionAgent
+        - (instancetype)init{
+            if (self = [super init]) {
+                _live2DMotion = new live2d::MotionQueueManager( ) ;
+            }
+            return self;
+        }
+        - (void)startMotion:(Live2DMotionObj *)motion value:(bool)value{
+            self->_live2DMotion->startMotion((live2d::Live2DMotion *)[motion obj_ptr], value);
+        }
+        - (void)updateParam:(Live2DModelOpenGL *)motion{
+            self->_live2DMotion->updateParam((live2d::Live2DModelOpenGL *)[motion obj_ptr]);
+        }
+        - (void)stopAllMotions{
+            self->_live2DMotion->stopAllMotions();
+        }
+        - (bool) isFinished{
+            return self->_live2DMotion->isFinished();
         }
     @end
 
@@ -102,6 +189,10 @@
                 _eyeBlink = new live2d::EyeBlinkMotion();
             }
             return self;
+        }
+
+        - (void *)obj_ptr{
+            return self->_live2DModel;
         }
 
         //bind texture

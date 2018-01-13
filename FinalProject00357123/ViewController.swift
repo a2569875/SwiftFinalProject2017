@@ -11,6 +11,7 @@ import GLKit
 import SceneKit
 import UIKit
 import ReplayKit
+import GameplayKit
 
 class ViewController: GLKViewController {
 
@@ -42,6 +43,8 @@ class ViewController: GLKViewController {
         return sceneView.session
     }
     var live2DModel: Live2DModelOpenGL!
+    var live2DMotions: Live2DMotionAgent!
+    var live2DMotionArray: [Live2DMotionObj] = []
     var context: EAGLContext!
     
     var m_loc : ModelLocation = ModelLocation(x: -1.4, y: 0.8, scx: 2.8, scy: -2.8)
@@ -190,8 +193,9 @@ class ViewController: GLKViewController {
         
         Live2D.initL2D()
         
-        
         let textures = ["texture_00"]
+        let motiones = ["idle/00","idle/01","idle/04","idle/05","idle/07","idle/08","idle/09",
+                      "idle/idl_00","idle/idl_01","idle/idl_03","idle/idl_06","idle/idl_07","idle/idl_08","idle/idl_09"]
         
         guard let modelPath = Bundle.main.path(forResource: modelFile, ofType: "moc") else {
             print("Failed to find model file")
@@ -213,6 +217,18 @@ class ViewController: GLKViewController {
                 }
             }
         }
+        
+        //載入動作
+        live2DMotions = Live2DMotionAgent()
+        live2DMotionArray.removeAll()
+        for mot in motiones {
+            if let modelPath = Bundle.main.path(forResource: mot, ofType: "mtn") {
+                //motionManager->startMotion( motion, false );//播放動作
+                //live2DMotions.startMotion(Live2DMotionObj.init(motionPath: modelPath), value: false)
+                live2DMotionArray.append(Live2DMotionObj.init(motionPath: modelPath))
+            }
+        }
+        
     }
     
     func tearDownGL() {
@@ -251,6 +267,14 @@ class ViewController: GLKViewController {
         live2DModel.setPartsOpacity(PropertyKeys.ModuleFirstArmLeftA1, opacity: 0) // hide default position armL
         live2DModel.setPartsOpacity(PropertyKeys.ModuleFirstArmRightA1, opacity: 0) // hide default position armR
 
+        if live2DMotions.isFinished(){
+            live2DMotions.startMotion(
+                live2DMotionArray[Int((GKRandomDistribution(lowestValue: 0, highestValue: 100).nextUniform() * Float(live2DMotionArray.count - 1)))],
+                value: false)
+        }
+        
+        live2DMotions.updateParam(live2DModel)
+        
         live2DModel.update()
         live2DModel.draw()
     }
