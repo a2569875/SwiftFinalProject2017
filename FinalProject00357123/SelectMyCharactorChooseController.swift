@@ -10,14 +10,29 @@ import UIKit
 
 class SelectMyCharactorChooseController: UITableViewController {
 
+    var myCharactors = [Charactor]()
+    var loadded_setting : GobalSetting!
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        myCharactors.remove(at: indexPath.row)
+        Charactor.saveToFile(lovers: myCharactors)
+        tableView.reloadData()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        if let lmyCharactors = Charactor.readFromFile() {
+            self.myCharactors = lmyCharactors
+        }
+        
+        if let lmySetting = GobalSetting.readFromFile() {
+            self.loadded_setting = lmySetting
+        }else{
+            self.loadded_setting = GobalSetting()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +44,26 @@ class SelectMyCharactorChooseController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return myCharactors.count
     }
-
-    /*
+//MyCharactorItem
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyCharactorItem", for: indexPath) as? SelectMyCharactorCell else  {
+            assert(false)
+        }
+        
         // Configure the cell...
+        let myCharactor = myCharactors[indexPath.row]
+        cell.CharName.text = myCharactor.name
+        cell.ModelImage.image = ModelChooseCell.getImage(myCharactor.modelName ?? "")
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

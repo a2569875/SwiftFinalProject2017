@@ -51,14 +51,17 @@ class ViewController: GLKViewController {
         //static let editAthleteSegue = "EditAthlete"
     }
     
-    // MARK: - Properties
+    var loadded_setting : GobalSetting!
     var modelFile = "Nanachi"
     let contentUpdater = ContentUpdater()
     let controller = RPBroadcastController()
+    var use_setting = false
     @IBOutlet var sceneView: ARSCNView!
+    
     var session: ARSession {
         return sceneView.session
     }
+    
     var live2DModel: Live2DModelOpenGL!
     var live2DMotions: Live2DMotionAgent!
     var live2DMotionArray: [Live2DMotionObj] = []
@@ -86,6 +89,18 @@ class ViewController: GLKViewController {
         sceneView.delegate = contentUpdater
         sceneView.session.delegate = self
         sceneView.automaticallyUpdatesLighting = true
+        
+        if let lmySetting = GobalSetting.readFromFile() {
+            self.loadded_setting = lmySetting
+        }else{
+            self.loadded_setting = GobalSetting()
+        }
+        
+        if use_setting {
+            if let lmyCharactors = Charactor.readFromFile() {
+                modelFile = lmyCharactors[self.loadded_setting.selectid].modelName ?? "Nanachi";
+            }
+        }
         
         self.context = EAGLContext(api: .openGLES2)
         if context == nil {

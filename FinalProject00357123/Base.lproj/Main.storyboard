@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="86" id="V4L-IF-4Ms" customClass="SelectMyCharactorCell" customModule="FinalProject00357123" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCharactorItem" rowHeight="86" id="V4L-IF-4Ms" customClass="SelectMyCharactorCell" customModule="FinalProject00357123" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V4L-IF-4Ms" id="OxY-gn-Tom">
@@ -105,6 +105,10 @@
                                         </view>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="CharName" destination="Mhm-Sq-GM0" id="7VM-1B-xPY"/>
+                                    <outlet property="ModelImage" destination="M36-nD-69O" id="hp4-19-McB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

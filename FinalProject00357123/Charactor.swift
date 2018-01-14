@@ -21,14 +21,14 @@ struct Charactor: Codable {
     static func saveToFile(lovers: [Charactor]) {
         let propertyEncoder = PropertyListEncoder()
         if let data = try? propertyEncoder.encode(lovers) {
-            let url = Charactor.documentsDirectory.appendingPathComponent("lover")
+            let url = Charactor.documentsDirectory.appendingPathComponent("charactor")
             try? data.write(to: url)
         }
     }
     
-    static func readLoversFromFile() -> [Charactor]? {
+    static func readFromFile() -> [Charactor]? {
         let propertyDecoder = PropertyListDecoder()
-        let url = Charactor.documentsDirectory.appendingPathComponent("lover")
+        let url = Charactor.documentsDirectory.appendingPathComponent("charactor")
         if let data = try? Data(contentsOf: url), let lovers = try? propertyDecoder.decode([Charactor].self, from: data) {
             return lovers
         } else {
