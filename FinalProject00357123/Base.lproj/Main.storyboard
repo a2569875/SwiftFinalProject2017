@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--角色-->
         <scene sceneID="Adv-8x-Qok">
             <objects>
                 <glkViewController preferredFramesPerSecond="30" id="ImV-8B-zDa" customClass="ViewController" customModule="FinalProject00357123" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                             <outlet property="delegate" destination="ImV-8B-zDa" id="qSy-Su-54n"/>
                         </connections>
                     </glkView>
-                    <tabBarItem key="tabBarItem" title="Item" id="xMK-R0-dMJ"/>
+                    <tabBarItem key="tabBarItem" title="角色" id="xMK-R0-dMJ"/>
                     <connections>
                         <outlet property="sceneView" destination="X4I-Pw-cti" id="bbt-iA-lrp"/>
                     </connections>
@@ -53,9 +53,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydC-Z8-5HA">
-                                <rect key="frame" x="131" y="391" width="112" height="30"/>
+                                <rect key="frame" x="111" y="562" width="152" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="互動角色"/>
+                                <state key="normal" title="編輯互動角色"/>
                                 <connections>
                                     <segue destination="83L-rg-gAD" kind="show" id="diQ-pr-QLk"/>
                                 </connections>
@@ -68,13 +68,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qsx-Jb-Cqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="98"/>
+            <point key="canvasLocation" x="693.60000000000002" y="97.536945812807886"/>
         </scene>
-        <!--Item-->
+        <!--選擇-->
         <scene sceneID="Iio-cz-hXT">
             <objects>
                 <tableViewController id="KfV-BG-4gM" customClass="SelectMyCharactorChooseController" customModule="FinalProject00357123" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AJe-HQ-6pb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AJe-HQ-6pb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,7 +86,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="85.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M36-nD-69O">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kanna" translatesAutoresizingMaskIntoConstraints="NO" id="M36-nD-69O">
                                             <rect key="frame" x="16" y="11" width="70" height="64"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -94,7 +94,7 @@
                                             <rect key="frame" x="94" y="11" width="265" height="64"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhm-Sq-GM0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我愛康娜" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhm-Sq-GM0">
                                                     <rect key="frame" x="33" y="8" width="199" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -117,7 +117,7 @@
                             <outlet property="delegate" destination="KfV-BG-4gM" id="mQr-xu-g4P"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Beg-by-mhd"/>
+                    <tabBarItem key="tabBarItem" title="選擇" id="Beg-by-mhd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJv-h6-MHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -139,29 +139,29 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="187.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PBG-EL-8Qh">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nanachi" translatesAutoresizingMaskIntoConstraints="NO" id="PBG-EL-8Qh">
                                             <rect key="frame" x="16" y="11" width="115" height="108"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Pm-SC-VOF">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="miitei" translatesAutoresizingMaskIntoConstraints="NO" id="9Pm-SC-VOF">
                                             <rect key="frame" x="16" y="140" width="53" height="37"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlT-9W-sB2">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我愛娜娜奇" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlT-9W-sB2">
                                             <rect key="frame" x="139" y="11" width="220" height="52"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MR5-Le-VEi">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="米蒂" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MR5-Le-VEi">
                                             <rect key="frame" x="77" y="140" width="54" height="37"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="On0-ST-oeK">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="（未實作）" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="On0-ST-oeK">
                                             <rect key="frame" x="139" y="125" width="230" height="52"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -249,14 +249,6 @@
                                                         <segue destination="ImV-8B-zDa" kind="show" id="DH8-cF-xl1"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahJ-Hi-Jxo">
-                                                    <rect key="frame" x="131" y="11" width="114" height="94"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" backgroundImage="head"/>
-                                                    <connections>
-                                                        <segue destination="PlV-Bt-k8u" kind="show" id="TnQ-iT-Fw8"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="模型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Md7-B3-OKn">
                                                     <rect key="frame" x="16" y="47" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -264,6 +256,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahJ-Hi-Jxo">
+                                                    <rect key="frame" x="138" y="11" width="98" height="94"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" backgroundImage="head"/>
+                                                    <connections>
+                                                        <segue destination="PlV-Bt-k8u" kind="show" id="TnQ-iT-Fw8"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -325,7 +325,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37I-JD-vBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AoF-uL-6Lg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2353" y="98"/>
+            <point key="canvasLocation" x="2352.8000000000002" y="97.536945812807886"/>
         </scene>
         <!--選擇模型-->
         <scene sceneID="GBn-Xa-NZd">
@@ -568,11 +568,11 @@
             </objects>
             <point key="canvasLocation" x="3174" y="98"/>
         </scene>
-        <!--Item-->
+        <!--主頁-->
         <scene sceneID="TVO-51-VS7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YeH-z4-TNH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="InM-FQ-xox"/>
+                    <tabBarItem key="tabBarItem" title="主頁" id="InM-FQ-xox"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1AQ-cm-4av">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -604,7 +604,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPB-gg-zJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-887" y="607"/>
+            <point key="canvasLocation" x="-881" y="631"/>
         </scene>
     </scenes>
     <resources>
@@ -620,6 +620,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eAe-Kn-2DQ"/>
-        <segue reference="DH8-cF-xl1"/>
+        <segue reference="hsm-Pf-B0J"/>
     </inferredMetricsTieBreakers>
 </document>
