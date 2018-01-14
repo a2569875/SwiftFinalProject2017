@@ -16,6 +16,8 @@
 		6A10A783200BC1E5007C56F1 /* GobalSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A782200BC1E5007C56F1 /* GobalSetting.swift */; };
 		6A10A785200BC6E1007C56F1 /* TestFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A784200BC6E1007C56F1 /* TestFunctions.swift */; };
 		6A10A787200BCC5F007C56F1 /* ControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A786200BCC5F007C56F1 /* ControllerUtils.swift */; };
+		6A10A78C200BEB9A007C56F1 /* L2DTargetPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A78A200BEB9A007C56F1 /* L2DTargetPoint.cpp */; };
+		6A10A78E200BEC34007C56F1 /* Live2DTargetPointObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A78D200BEC34007C56F1 /* Live2DTargetPointObj.swift */; };
 		6A9D38412001BDE6007757FD /* ModelLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D38402001BDE6007757FD /* ModelLocation.swift */; };
 		6AE1B4EF2008624500097F15 /* Riko.moc in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1B4ED2008624500097F15 /* Riko.moc */; };
 		6AE1B4F02008624500097F15 /* Riko.2048 in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1B4EE2008624500097F15 /* Riko.2048 */; };
@@ -76,6 +78,9 @@
 		6A10A782200BC1E5007C56F1 /* GobalSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GobalSetting.swift; sourceTree = "<group>"; };
 		6A10A784200BC6E1007C56F1 /* TestFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunctions.swift; sourceTree = "<group>"; };
 		6A10A786200BCC5F007C56F1 /* ControllerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerUtils.swift; sourceTree = "<group>"; };
+		6A10A78A200BEB9A007C56F1 /* L2DTargetPoint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = L2DTargetPoint.cpp; sourceTree = "<group>"; };
+		6A10A78B200BEB9A007C56F1 /* L2DTargetPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = L2DTargetPoint.h; sourceTree = "<group>"; };
+		6A10A78D200BEC34007C56F1 /* Live2DTargetPointObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live2DTargetPointObj.swift; sourceTree = "<group>"; };
 		6A9D38402001BDE6007757FD /* ModelLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLocation.swift; sourceTree = "<group>"; };
 		6AE1B4ED2008624500097F15 /* Riko.moc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Riko.moc; sourceTree = SOURCE_ROOT; };
 		6AE1B4EE2008624500097F15 /* Riko.2048 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Riko.2048; sourceTree = SOURCE_ROOT; };
@@ -165,6 +170,8 @@
 		9E3322081FBA0B2A00E186AF /* FinalProject00357123 */ = {
 			isa = PBXGroup;
 			children = (
+				6A10A78A200BEB9A007C56F1 /* L2DTargetPoint.cpp */,
+				6A10A78B200BEB9A007C56F1 /* L2DTargetPoint.h */,
 				6AEADF76200A6AB1001591A4 /* idle */,
 				6AE1B50520086A2D00097F15 /* tohru.2048 */,
 				6AE1B50620086A2D00097F15 /* tohru.moc */,
@@ -206,6 +213,7 @@
 				6A10A782200BC1E5007C56F1 /* GobalSetting.swift */,
 				6A10A784200BC6E1007C56F1 /* TestFunctions.swift */,
 				6A10A786200BCC5F007C56F1 /* ControllerUtils.swift */,
+				6A10A78D200BEC34007C56F1 /* Live2DTargetPointObj.swift */,
 			);
 			path = FinalProject00357123;
 			sourceTree = "<group>";
@@ -392,8 +400,10 @@
 				6AE1B50C2008726000097F15 /* ModelChooseCell.swift in Sources */,
 				6AE91BE62006461300DB969E /* CharactorTableViewCell.swift in Sources */,
 				6A10A77D200BA86F007C56F1 /* Live2DParamPropertyKeys.swift in Sources */,
+				6A10A78C200BEB9A007C56F1 /* L2DTargetPoint.cpp in Sources */,
 				9E33229B1FBA38CB00E186AF /* Live2D-binding.mm in Sources */,
 				6A10A787200BCC5F007C56F1 /* ControllerUtils.swift in Sources */,
+				6A10A78E200BEC34007C56F1 /* Live2DTargetPointObj.swift in Sources */,
 				6AE1B50A20086A7C00097F15 /* ModelChooseController.swift in Sources */,
 				6AE91BE42006046000DB969E /* CharactorTableViewController.swift in Sources */,
 				6A0EAD292007D71E0047FB55 /* CharactorEditorViewController.swift in Sources */,
@@ -563,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -589,6 +600,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREPROCESSOR_DEFINITIONS = L2D_TARGET_IPHONE_ES2;

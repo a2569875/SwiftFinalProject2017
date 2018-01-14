@@ -64,6 +64,7 @@ class ViewController: GLKViewController {
     
     var live2DModel: Live2DModelOpenGL!
     var live2DMotions: Live2DMotionAgent!
+    var live2DDrags: Live2DTargetPointObj!
     var live2DMotionArray: [Live2DMotionObj] = []
     var context: EAGLContext!
     
@@ -116,6 +117,7 @@ class ViewController: GLKViewController {
         }
         view.context = self.context
         
+        //pinch
         let pinch = UIPinchGestureRecognizer(
             target: self,
             action: #selector(ViewController.pinch(recognizer:))
@@ -123,10 +125,31 @@ class ViewController: GLKViewController {
         
         self.view.addGestureRecognizer(pinch)
         
+        //drag
+        live2DDrags = Live2DTargetPointObj()
+        let pan = UIPanGestureRecognizer(
+            target:self,
+            action:#selector(ViewController.dragpan(recognizer:))
+        )
+        
+        pan.minimumNumberOfTouches = 1
+        pan.maximumNumberOfTouches = 1
+        
+        self.view.addGestureRecognizer(pan)
+        
         self.setupGL()
     }
 
-    
+    @objc func dragpan(recognizer:UIPanGestureRecognizer){
+        let point = recognizer.location(in: self.view)
+        let size = self.view.bounds.size
+        
+        live2DDrags.set(x : Float((point.x) / size.width) * 2 - 1, y : Float((size.height - point.y) / size.height) * 2 - 1);
+        
+        
+        
+        print("\(point.x),\(point.y)")
+    }
 
     
     override func viewDidAppear(_ animated: Bool) {
@@ -315,11 +338,11 @@ class ViewController: GLKViewController {
         
         let t = UtSystem.getUserTimeMSec() / 1000.0
         
-        live2DModel.setParam(PropertyKeys.BodyAngleZ, value: (CGFloat)(10.0 * sin(t)))
-        live2DModel.setParam(PropertyKeys.HairFront, value: (CGFloat)(sin(t)))
-        live2DModel.setParam(PropertyKeys.HairBack, value: (CGFloat)(sin(t)))
-        live2DModel.setParam(PropertyKeys.ModuleBreath, value: (CGFloat)((cos(t) + 1.0) / 2.0))
-        live2DModel.setParam(PropertyKeys.ModuleBustY, value: (CGFloat)(cos(t)))
+        //live2DModel.setParam(PropertyKeys.BodyAngleZ, value: (CGFloat)(10.0 * sin(t)))
+        //live2DModel.setParam(PropertyKeys.HairFront, value: (CGFloat)(sin(t)))
+        //live2DModel.setParam(PropertyKeys.HairBack, value: (CGFloat)(sin(t)))
+        //live2DModel.setParam(PropertyKeys.ModuleBreath, value: (CGFloat)((cos(t) + 1.0) / 2.0))
+        //live2DModel.setParam(PropertyKeys.ModuleBustY, value: (CGFloat)(cos(t)))
         live2DModel.setPartsOpacity(PropertyKeys.ModuleFirstArmLeftA1, opacity: 0) // hide default position armL
         live2DModel.setPartsOpacity(PropertyKeys.ModuleFirstArmRightA1, opacity: 0) // hide default position armR
 
@@ -330,6 +353,22 @@ class ViewController: GLKViewController {
         }
         
         live2DMotions.updateParam(live2DModel)
+        live2DDrags.update()
+        
+        let dragPt = live2DDrags.get()
+        let dragX = dragPt.x
+        let dragY = dragPt.y
+        
+        live2DModel.addParam(Live2DParamPropertyKeys.AngleX, value: (CGFloat)(dragX * 30))//-30到30
+        live2DModel.addParam(Live2DParamPropertyKeys.AngleY, value: (CGFloat)(dragY * 30))
+        
+        live2DModel.addParam("PARAM_BODY_X", value: (CGFloat)(dragY * 10))
+        
+        live2DModel.addParam("PARAM_EYE_BALL_X", value: (CGFloat)(dragX))
+        live2DModel.addParam("PARAM_EYE_BALL_Y", value: (CGFloat)(dragY))
+        
+        
+
         
         live2DModel.update()
         live2DModel.draw()

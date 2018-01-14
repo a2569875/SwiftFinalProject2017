@@ -22,8 +22,47 @@
 //#include <MotionQueueManager.h>
 #import "MotionQueueManager.h"
 
+//#include "L2DTargetPoint.h"
+#import "L2DTargetPoint.h"
+
 #import "Live2DModelOpenGL.h"
 #import "UtSystem.h"
+
+/*
+ //L2DTargetPoint
+ @interface Live2DTargetPoint : NSObject
+     - (instancetype)init;
+     - (void)setXY:(float)x (float)y;
+ @end
+ */
+@interface Live2DTargetPoint ()
+    @property (nonatomic, assign) live2d::framework::L2DTargetPoint *live2DTargetPoint;
+
+@end
+
+@implementation Live2DTargetPoint
+    - (instancetype)init {
+        if (self = [super init]) {
+            _live2DTargetPoint = new live2d::framework::L2DTargetPoint();
+        }
+        return self;
+    }
+
+    - (void)setXY:(float)x y:(float)y {
+        self->_live2DTargetPoint->set(x, y);
+    }
+
+    - (float)getX{
+        return self->_live2DTargetPoint->getX();
+    }
+    - (float)getY{
+        return self->_live2DTargetPoint->getY();
+    }
+
+    - (void)update{
+        self->_live2DTargetPoint->update();
+    }
+@end
 
 #pragma mark - Live2D class
     /*
@@ -219,6 +258,10 @@
 
         - (void)setParam:(NSString *)paramId value:(CGFloat)value {
             self.live2DModel->setParamFloat([paramId UTF8String], (float)(value));
+        }
+
+        - (void)addParam:(NSString *)paramId value:(CGFloat)value {
+            self.live2DModel->addToParamFloat([paramId UTF8String], (float)(value));
         }
 
         - (void)setPartsOpacity:(NSString *)paramId opacity:(CGFloat)value {

@@ -18,6 +18,15 @@
     + (NSString *)live2DVersion;
 @end
 
+//L2DTargetPoint
+@interface Live2DTargetPoint : NSObject
+    - (instancetype)init;
+    - (void)setXY:(float)x y:(float)y;
+    - (float)getX;
+    - (float)getY;
+    - (void)update;
+@end
+
 //Live2D C++ 模型物件連接Swift
 @interface Live2DModelOpenGL : NSObject
 
@@ -25,6 +34,7 @@
     - (void)setTexture:(int)textureNo to:(uint32_t)openGLTextureNo;
     - (float)getCanvasWidth;
     - (void)setMatrix:(SCNMatrix4)matrix;
+    - (void)addParam:(NSString *)paramId value:(CGFloat)value;
     - (void)setParam:(NSString *)paramId value:(CGFloat)value;
     - (void)setPartsOpacity:(NSString *)paramId opacity:(CGFloat)value;
     - (void)update;
