@@ -67,7 +67,19 @@ class ViewController: GLKViewController {
     var m_loc : ModelLocation = ModelLocation(x: -1.4, y: 0.8, scx: 2.8, scy: -2.8)
     
     // MARK: - View Controller Life Cycle
-
+    @objc func pinch(recognizer:UIPinchGestureRecognizer){
+        if recognizer.state == .changed {
+            let scale = recognizer.scale
+            let frm_x = m_loc.scx
+            if CGFloat(frm_x) * scale < 5.6 && CGFloat(frm_x) * scale > 0.5 {
+                m_loc.scx = frm_x * Float(scale)
+                m_loc.scy = -frm_x * Float(scale)
+                m_loc.x *= Float(scale)
+                m_loc.y *= Float(scale)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,9 +99,19 @@ class ViewController: GLKViewController {
         }
         view.context = self.context
         
+        let pinch = UIPinchGestureRecognizer(
+            target: self,
+            action: #selector(ViewController.pinch(recognizer:))
+        )
+        
+        self.view.addGestureRecognizer(pinch)
+        
         self.setupGL()
     }
 
+    
+
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
