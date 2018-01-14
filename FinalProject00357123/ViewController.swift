@@ -55,7 +55,7 @@ class ViewController: GLKViewController {
     var modelFile = "Nanachi"
     let contentUpdater = ContentUpdater()
     let controller = RPBroadcastController()
-    var use_setting = false
+    var use_setting = true
     @IBOutlet var sceneView: ARSCNView!
     
     var session: ARSession {
@@ -98,7 +98,9 @@ class ViewController: GLKViewController {
         
         if use_setting {
             if let lmyCharactors = Charactor.readFromFile() {
-                modelFile = lmyCharactors[self.loadded_setting.selectid].modelName ?? "Nanachi";
+                if self.loadded_setting.selectid >= 0 {
+                    modelFile = lmyCharactors[self.loadded_setting.selectid].modelName ?? "Nanachi";
+                }
             }
         }
         

@@ -21,6 +21,8 @@ class SelectMyCharactorChooseController: UITableViewController {
         
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,13 +67,36 @@ class SelectMyCharactorChooseController: UITableViewController {
         return cell
     }
 
-    /*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        loadded_setting.selectid = indexPath.row
+        GobalSetting.saveToFile(settings: loadded_setting)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if (tableView.indexPathForSelectedRow?.row) != nil {
+            
+            loadded_setting.selectid = tableView.indexPathForSelectedRow!.row
+            GobalSetting.saveToFile(settings: loadded_setting)
+            return true;
+        }
+        
+        if(myCharactors.count <= 0){
+            return true
+        }
+        
+        ControllerUtil.showAlert(self, message: "請選擇角色")
+        
+        return false;
+    }
+    
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return false
     }
-    */
+ 
 
     /*
     // Override to support editing the table view.

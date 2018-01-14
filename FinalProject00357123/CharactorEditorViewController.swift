@@ -47,6 +47,7 @@ class CharactorEditorViewController: UITableViewController, UIImagePickerControl
 
             if let m_name = ModelName {
                 controller.modelFile = m_name
+                controller.use_setting = false
             }
         }
         

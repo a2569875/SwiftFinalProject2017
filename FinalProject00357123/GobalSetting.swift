@@ -18,9 +18,9 @@ struct GobalSetting: Codable {
     
     static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     
-    static func saveToFile(lovers: GobalSetting) {
+    static func saveToFile(settings: GobalSetting) {
         let propertyEncoder = PropertyListEncoder()
-        if let data = try? propertyEncoder.encode(lovers) {
+        if let data = try? propertyEncoder.encode(settings) {
             let url = Charactor.documentsDirectory.appendingPathComponent("gobalSetting")
             try? data.write(to: url)
         }
