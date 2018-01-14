@@ -69,16 +69,16 @@
             </objects>
             <point key="canvasLocation" x="863.20000000000005" y="97.536945812807886"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Select My Charactor Choose Controller-->
         <scene sceneID="Iio-cz-hXT">
             <objects>
-                <tableViewController id="KfV-BG-4gM" sceneMemberID="viewController">
+                <tableViewController id="KfV-BG-4gM" customClass="SelectMyCharactorChooseController" customModule="FinalProject00357123" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AJe-HQ-6pb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="86" id="V4L-IF-4Ms">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="86" id="V4L-IF-4Ms" customClass="SelectMyCharactorCell" customModule="FinalProject00357123" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V4L-IF-4Ms" id="OxY-gn-Tom">

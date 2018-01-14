@@ -12,6 +12,7 @@
 		6A102A882001B91F00093F31 /* Nanachi.2048 in Resources */ = {isa = PBXBuildFile; fileRef = 6A102A842001B3B500093F31 /* Nanachi.2048 */; };
 		6A10A77D200BA86F007C56F1 /* Live2DParamPropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A77C200BA86F007C56F1 /* Live2DParamPropertyKeys.swift */; };
 		6A10A77F200BB869007C56F1 /* SelectMyCharactorChooseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A77E200BB869007C56F1 /* SelectMyCharactorChooseController.swift */; };
+		6A10A781200BB92D007C56F1 /* SelectMyCharactorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A780200BB92D007C56F1 /* SelectMyCharactorCell.swift */; };
 		6A9D38412001BDE6007757FD /* ModelLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D38402001BDE6007757FD /* ModelLocation.swift */; };
 		6AE1B4EF2008624500097F15 /* Riko.moc in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1B4ED2008624500097F15 /* Riko.moc */; };
 		6AE1B4F02008624500097F15 /* Riko.2048 in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1B4EE2008624500097F15 /* Riko.2048 */; };
@@ -68,6 +69,7 @@
 		6A102A852001B3B500093F31 /* Nanachi.moc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nanachi.moc; sourceTree = SOURCE_ROOT; };
 		6A10A77C200BA86F007C56F1 /* Live2DParamPropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live2DParamPropertyKeys.swift; sourceTree = "<group>"; };
 		6A10A77E200BB869007C56F1 /* SelectMyCharactorChooseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMyCharactorChooseController.swift; sourceTree = "<group>"; };
+		6A10A780200BB92D007C56F1 /* SelectMyCharactorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMyCharactorCell.swift; sourceTree = "<group>"; };
 		6A9D38402001BDE6007757FD /* ModelLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLocation.swift; sourceTree = "<group>"; };
 		6AE1B4ED2008624500097F15 /* Riko.moc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Riko.moc; sourceTree = SOURCE_ROOT; };
 		6AE1B4EE2008624500097F15 /* Riko.2048 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Riko.2048; sourceTree = SOURCE_ROOT; };
@@ -194,6 +196,7 @@
 				6AE1B50B2008726000097F15 /* ModelChooseCell.swift */,
 				6A10A77C200BA86F007C56F1 /* Live2DParamPropertyKeys.swift */,
 				6A10A77E200BB869007C56F1 /* SelectMyCharactorChooseController.swift */,
+				6A10A780200BB92D007C56F1 /* SelectMyCharactorCell.swift */,
 			);
 			path = FinalProject00357123;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				6AE1B50A20086A7C00097F15 /* ModelChooseController.swift in Sources */,
 				6AE91BE42006046000DB969E /* CharactorTableViewController.swift in Sources */,
 				6A0EAD292007D71E0047FB55 /* CharactorEditorViewController.swift in Sources */,
+				6A10A781200BB92D007C56F1 /* SelectMyCharactorCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
