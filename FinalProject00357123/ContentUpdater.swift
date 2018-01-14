@@ -28,7 +28,7 @@ class ContentUpdater: NSObject, ARSCNViewDelegate {
         
         let c = faceAnchor.transform.columns
 
-        live2DModel.setParam(ViewController.PropertyKeys.AngleZ, value: (CGFloat)(atan2f(c.1.x, c.1.y) * 180 / Float.pi))
+        live2DModel.setParam(Live2DParamPropertyKeys.AngleZ, value: (CGFloat)(atan2f(c.1.x, c.1.y) * 180 / Float.pi))
 
         live2DModel.setParam(ViewController.PropertyKeys.BrowLeftY, value: -(CGFloat)(0.5 - browOuterUpLeft))
         live2DModel.setParam(ViewController.PropertyKeys.BrowRightY, value: -(CGFloat)(0.5 - browOuterUpRight))
