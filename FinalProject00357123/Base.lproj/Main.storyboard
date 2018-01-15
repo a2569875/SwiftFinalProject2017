@@ -130,13 +130,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="85.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kanna" translatesAutoresizingMaskIntoConstraints="NO" id="M36-nD-69O">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kanna" translatesAutoresizingMaskIntoConstraints="NO" id="M36-nD-69O">
                                             <rect key="frame" x="16" y="11" width="70" height="64"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="tRo-a4-eCA"/>
+                                            </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6hr-1s-fJi">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hr-1s-fJi">
                                             <rect key="frame" x="94" y="11" width="265" height="64"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我愛康娜" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhm-Sq-GM0">
                                                     <rect key="frame" x="33" y="8" width="199" height="48"/>
@@ -149,6 +150,15 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6hr-1s-fJi" firstAttribute="leading" secondItem="M36-nD-69O" secondAttribute="trailing" constant="8" symbolic="YES" id="4oT-Mb-oVQ"/>
+                                        <constraint firstItem="M36-nD-69O" firstAttribute="top" secondItem="OxY-gn-Tom" secondAttribute="topMargin" id="BH8-Jr-9x2"/>
+                                        <constraint firstItem="M36-nD-69O" firstAttribute="bottom" secondItem="6hr-1s-fJi" secondAttribute="bottom" id="JDg-q5-bxU"/>
+                                        <constraint firstItem="6hr-1s-fJi" firstAttribute="trailing" secondItem="OxY-gn-Tom" secondAttribute="trailingMargin" id="Rja-b6-Top"/>
+                                        <constraint firstItem="M36-nD-69O" firstAttribute="top" secondItem="6hr-1s-fJi" secondAttribute="top" id="ebS-r5-QqN"/>
+                                        <constraint firstItem="M36-nD-69O" firstAttribute="leading" secondItem="OxY-gn-Tom" secondAttribute="leadingMargin" id="fMR-r3-utk"/>
+                                        <constraint firstItem="M36-nD-69O" firstAttribute="bottom" secondItem="OxY-gn-Tom" secondAttribute="bottomMargin" id="zoU-Lv-Whb"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="CharName" destination="Mhm-Sq-GM0" id="7VM-1B-xPY"/>

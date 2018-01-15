@@ -35,8 +35,8 @@ class ContentUpdater: NSObject, ARSCNViewDelegate {
         live2DModel.setParam(Live2DParamPropertyKeys.BrowLeftAngle, value: 2*(CGFloat)(browInnerUp - browOuterUpLeft))
         live2DModel.setParam(Live2DParamPropertyKeys.BrowRightAngle, value: 2*(CGFloat)(browInnerUp - browOuterUpRight))
 
-        live2DModel.setParam(ViewController.PropertyKeys.LeftEyeOpen, value: (CGFloat)(1.0 - eyeBlinkLeft))
-        live2DModel.setParam(ViewController.PropertyKeys.RightEyeOpen, value: (CGFloat)(1.0 - eyeBlinkRight))
+        live2DModel.setParam(Live2DParamPropertyKeys.LeftEyeOpen, value: (CGFloat)(1.0 - eyeBlinkLeft))
+        live2DModel.setParam(Live2DParamPropertyKeys.RightEyeOpen, value: (CGFloat)(1.0 - eyeBlinkRight))
         
         live2DModel.setParam(ViewController.PropertyKeys.MouseOpenY, value: (CGFloat)(jawOpen*1.8))
         live2DModel.setParam(ViewController.PropertyKeys.MouseForm, value: (CGFloat)(1 - mouthFunnel*2))
