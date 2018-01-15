@@ -303,7 +303,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="233.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re9-Er-Sgm">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re9-Er-Sgm">
                                                     <rect key="frame" x="60" y="-11.666666666666671" width="255" height="255.33333333333337"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="re9-Er-Sgm" secondAttribute="height" multiplier="1:1" id="2ap-CP-Hu5"/>
@@ -835,6 +835,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eAe-Kn-2DQ"/>
-        <segue reference="6Ci-Zv-QCI"/>
+        <segue reference="DH8-cF-xl1"/>
     </inferredMetricsTieBreakers>
 </document>
