@@ -20,6 +20,9 @@
 		6A10A78E200BEC34007C56F1 /* Live2DTargetPointObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A78D200BEC34007C56F1 /* Live2DTargetPointObj.swift */; };
 		6A9D38412001BDE6007757FD /* ModelLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D38402001BDE6007757FD /* ModelLocation.swift */; };
 		6AE0C44B200C952F008419AF /* physics.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE0C44A200C952F008419AF /* physics.json */; };
+		6AE0C44E200C9728008419AF /* L2DPhysics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0C44D200C9728008419AF /* L2DPhysics.cpp */; };
+		6AE0C451200C9A34008419AF /* Physics-binding.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0C450200C9A33008419AF /* Physics-binding.mm */; };
+		6AE0C453200CA024008419AF /* Live2DPhysicsObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0C452200CA024008419AF /* Live2DPhysicsObj.swift */; };
 		6AE1B4EF2008624500097F15 /* Riko.moc in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1B4ED2008624500097F15 /* Riko.moc */; };
 		6AE1B4F02008624500097F15 /* Riko.2048 in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1B4EE2008624500097F15 /* Riko.2048 */; };
 		6AE1B4F32008627B00097F15 /* miitei.moc in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1B4F12008627B00097F15 /* miitei.moc */; };
@@ -84,6 +87,11 @@
 		6A10A78D200BEC34007C56F1 /* Live2DTargetPointObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live2DTargetPointObj.swift; sourceTree = "<group>"; };
 		6A9D38402001BDE6007757FD /* ModelLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLocation.swift; sourceTree = "<group>"; };
 		6AE0C44A200C952F008419AF /* physics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = physics.json; sourceTree = SOURCE_ROOT; };
+		6AE0C44C200C9728008419AF /* L2DPhysics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = L2DPhysics.h; sourceTree = "<group>"; };
+		6AE0C44D200C9728008419AF /* L2DPhysics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = L2DPhysics.cpp; sourceTree = "<group>"; };
+		6AE0C44F200C979A008419AF /* L2DPhysicsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = L2DPhysicsHeader.h; sourceTree = "<group>"; };
+		6AE0C450200C9A33008419AF /* Physics-binding.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "Physics-binding.mm"; sourceTree = "<group>"; };
+		6AE0C452200CA024008419AF /* Live2DPhysicsObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live2DPhysicsObj.swift; sourceTree = "<group>"; };
 		6AE1B4ED2008624500097F15 /* Riko.moc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Riko.moc; sourceTree = SOURCE_ROOT; };
 		6AE1B4EE2008624500097F15 /* Riko.2048 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Riko.2048; sourceTree = SOURCE_ROOT; };
 		6AE1B4F12008627B00097F15 /* miitei.moc */ = {isa = PBXFileReference; lastKnownFileType = file; path = miitei.moc; sourceTree = SOURCE_ROOT; };
@@ -173,6 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				6AE0C44A200C952F008419AF /* physics.json */,
+				6AE0C450200C9A33008419AF /* Physics-binding.mm */,
+				6AE0C44D200C9728008419AF /* L2DPhysics.cpp */,
+				6AE0C44C200C9728008419AF /* L2DPhysics.h */,
 				6A10A78A200BEB9A007C56F1 /* L2DTargetPoint.cpp */,
 				6A10A78B200BEB9A007C56F1 /* L2DTargetPoint.h */,
 				6AEADF76200A6AB1001591A4 /* idle */,
@@ -217,6 +228,8 @@
 				6A10A784200BC6E1007C56F1 /* TestFunctions.swift */,
 				6A10A786200BCC5F007C56F1 /* ControllerUtils.swift */,
 				6A10A78D200BEC34007C56F1 /* Live2DTargetPointObj.swift */,
+				6AE0C44F200C979A008419AF /* L2DPhysicsHeader.h */,
+				6AE0C452200CA024008419AF /* Live2DPhysicsObj.swift */,
 			);
 			path = FinalProject00357123;
 			sourceTree = "<group>";
@@ -395,6 +408,7 @@
 				6A10A783200BC1E5007C56F1 /* GobalSetting.swift in Sources */,
 				6AE91BE22005FF2D00DB969E /* MainViewController.swift in Sources */,
 				6A10A785200BC6E1007C56F1 /* TestFunctions.swift in Sources */,
+				6AE0C451200C9A34008419AF /* Physics-binding.mm in Sources */,
 				9E3322381FBA0CAE00E186AF /* ContentUpdater.swift in Sources */,
 				6A10A77F200BB869007C56F1 /* SelectMyCharactorChooseController.swift in Sources */,
 				6AE91BE02005FF0E00DB969E /* Charactor.swift in Sources */,
@@ -402,9 +416,11 @@
 				9E33220C1FBA0B2A00E186AF /* ViewController.swift in Sources */,
 				9E33220A1FBA0B2A00E186AF /* AppDelegate.swift in Sources */,
 				6AE1B50C2008726000097F15 /* ModelChooseCell.swift in Sources */,
+				6AE0C44E200C9728008419AF /* L2DPhysics.cpp in Sources */,
 				6AE91BE62006461300DB969E /* CharactorTableViewCell.swift in Sources */,
 				6A10A77D200BA86F007C56F1 /* Live2DParamPropertyKeys.swift in Sources */,
 				6A10A78C200BEB9A007C56F1 /* L2DTargetPoint.cpp in Sources */,
+				6AE0C453200CA024008419AF /* Live2DPhysicsObj.swift in Sources */,
 				9E33229B1FBA38CB00E186AF /* Live2D-binding.mm in Sources */,
 				6A10A787200BCC5F007C56F1 /* ControllerUtils.swift in Sources */,
 				6A10A78E200BEC34007C56F1 /* Live2DTargetPointObj.swift in Sources */,

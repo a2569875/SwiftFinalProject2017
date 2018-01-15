@@ -50,6 +50,11 @@
 
 @end
 
+@interface Live2DPhysicsObjC : NSObject
+    -(instancetype)initWithModelPath:(NSString *)phyPath;
+    -(void)update:(Live2DModelOpenGL *)model;
+@end
+
 //Live2D C++ 動作物件連接Swift
 @interface Live2DMotionObj : NSObject
     - (instancetype)initWithMotionPath:(NSString *)motionPath;

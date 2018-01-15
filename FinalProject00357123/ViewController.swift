@@ -65,6 +65,7 @@ class ViewController: GLKViewController {
     var live2DModel: Live2DModelOpenGL!
     var live2DMotions: Live2DMotionAgent!
     var live2DDrags: Live2DTargetPointObj!
+    var live2Dphyics: Live2DPhysicsObj?
     var live2DMotionArray: [Live2DMotionObj] = []
     var context: EAGLContext!
     
@@ -144,11 +145,13 @@ class ViewController: GLKViewController {
         let point = recognizer.location(in: self.view)
         let size = self.view.bounds.size
         
-        live2DDrags.set(x : Float((point.x) / size.width) * 2 - 1, y : Float((size.height - point.y) / size.height) * 2 - 1);
-        
-        
-        
-        print("\(point.x),\(point.y)")
+        if recognizer.state == .changed{
+            live2DDrags.set(x : Float((point.x) / size.width) * 2 - 1, y : Float((size.height - point.y) / size.height) * 2 - 1);
+        } else if recognizer.state == .ended {
+            live2DDrags.set(x : 0, y : 0);
+        }
+
+        //print("\(point.x),\(point.y)")
     }
 
     
@@ -308,6 +311,11 @@ class ViewController: GLKViewController {
             }
         }
         
+        if let phyPath = Bundle.main.path(forResource: "physics", ofType: "json") {
+            print("loadded physics data from \(phyPath)")
+            live2Dphyics = Live2DPhysicsObj(phyPath: phyPath)
+        }
+        
     }
     
     func tearDownGL() {
@@ -336,16 +344,13 @@ class ViewController: GLKViewController {
             m41: x,   m42: y,   m43: 0, m44: 1)
         live2DModel.setMatrix(matrix4)
         
-        let t = UtSystem.getUserTimeMSec() / 1000.0
-        
-        //live2DModel.setParam(PropertyKeys.BodyAngleZ, value: (CGFloat)(10.0 * sin(t)))
-        //live2DModel.setParam(PropertyKeys.HairFront, value: (CGFloat)(sin(t)))
-        //live2DModel.setParam(PropertyKeys.HairBack, value: (CGFloat)(sin(t)))
-        //live2DModel.setParam(PropertyKeys.ModuleBreath, value: (CGFloat)((cos(t) + 1.0) / 2.0))
-        //live2DModel.setParam(PropertyKeys.ModuleBustY, value: (CGFloat)(cos(t)))
-        live2DModel.setPartsOpacity(PropertyKeys.ModuleFirstArmLeftA1, opacity: 0) // hide default position armL
-        live2DModel.setPartsOpacity(PropertyKeys.ModuleFirstArmRightA1, opacity: 0) // hide default position armR
+        //啟動物理運算
+        if let phydata = self.live2Dphyics {
+            phydata.update(model: live2DModel)
+            live2DModel.update()
+        }
 
+        //隨機動作
         if live2DMotions.isFinished(){
             live2DMotions.startMotion(
                 live2DMotionArray[Int((GKRandomDistribution(lowestValue: 0, highestValue: 100).nextUniform() * Float(live2DMotionArray.count - 1)))],
@@ -353,23 +358,24 @@ class ViewController: GLKViewController {
         }
         
         live2DMotions.updateParam(live2DModel)
+ 
+        //跟著手指
         live2DDrags.update()
-        
         let dragPt = live2DDrags.get()
         let dragX = dragPt.x
         let dragY = dragPt.y
         
+        print("getted \(dragX), \(dragY)")
+        
         live2DModel.addParam(Live2DParamPropertyKeys.AngleX, value: (CGFloat)(dragX * 30))//-30到30
         live2DModel.addParam(Live2DParamPropertyKeys.AngleY, value: (CGFloat)(dragY * 30))
         
-        live2DModel.addParam("PARAM_BODY_X", value: (CGFloat)(dragY * 10))
+        live2DModel.addParam("PARAM_BODY_X", value: (CGFloat)(dragX * 10))
         
         live2DModel.addParam("PARAM_EYE_BALL_X", value: (CGFloat)(dragX))
         live2DModel.addParam("PARAM_EYE_BALL_Y", value: (CGFloat)(dragY))
         
-        
-
-        
+        //更新並畫出
         live2DModel.update()
         live2DModel.draw()
     }
