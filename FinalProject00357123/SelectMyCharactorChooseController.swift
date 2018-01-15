@@ -72,7 +72,9 @@ class SelectMyCharactorChooseController: UITableViewController {
         GobalSetting.saveToFile(settings: loadded_setting)
         if let lmyCharactors = Charactor.readFromFile() {
             self.myCharactors = lmyCharactors
+            tableView.reloadData()
         }
+        if indexPath.row < self.myCharactors.count { tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none) }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

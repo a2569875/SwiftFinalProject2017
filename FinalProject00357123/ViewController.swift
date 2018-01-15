@@ -64,7 +64,8 @@ class ViewController: GLKViewController {
         
         if use_setting {
             if let lmyCharactors = Charactor.readFromFile() {
-                if self.loadded_setting.selectid >= 0 {
+                if self.loadded_setting.selectid >= 0 && self.loadded_setting.selectid < lmyCharactors.count {
+                    ControllerUtil.showAlert(self, message: "未選擇角色 (預設將顯示娜娜奇)")
                     modelFile = lmyCharactors[self.loadded_setting.selectid].modelName ?? "Nanachi";
                 }
             }
