@@ -19,6 +19,7 @@
 		6A10A78C200BEB9A007C56F1 /* L2DTargetPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A78A200BEB9A007C56F1 /* L2DTargetPoint.cpp */; };
 		6A10A78E200BEC34007C56F1 /* Live2DTargetPointObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A78D200BEC34007C56F1 /* Live2DTargetPointObj.swift */; };
 		6A9D38412001BDE6007757FD /* ModelLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D38402001BDE6007757FD /* ModelLocation.swift */; };
+		6AE0C44B200C952F008419AF /* physics.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE0C44A200C952F008419AF /* physics.json */; };
 		6AE1B4EF2008624500097F15 /* Riko.moc in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1B4ED2008624500097F15 /* Riko.moc */; };
 		6AE1B4F02008624500097F15 /* Riko.2048 in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1B4EE2008624500097F15 /* Riko.2048 */; };
 		6AE1B4F32008627B00097F15 /* miitei.moc in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1B4F12008627B00097F15 /* miitei.moc */; };
@@ -82,6 +83,7 @@
 		6A10A78B200BEB9A007C56F1 /* L2DTargetPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = L2DTargetPoint.h; sourceTree = "<group>"; };
 		6A10A78D200BEC34007C56F1 /* Live2DTargetPointObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live2DTargetPointObj.swift; sourceTree = "<group>"; };
 		6A9D38402001BDE6007757FD /* ModelLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLocation.swift; sourceTree = "<group>"; };
+		6AE0C44A200C952F008419AF /* physics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = physics.json; sourceTree = SOURCE_ROOT; };
 		6AE1B4ED2008624500097F15 /* Riko.moc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Riko.moc; sourceTree = SOURCE_ROOT; };
 		6AE1B4EE2008624500097F15 /* Riko.2048 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Riko.2048; sourceTree = SOURCE_ROOT; };
 		6AE1B4F12008627B00097F15 /* miitei.moc */ = {isa = PBXFileReference; lastKnownFileType = file; path = miitei.moc; sourceTree = SOURCE_ROOT; };
@@ -170,6 +172,7 @@
 		9E3322081FBA0B2A00E186AF /* FinalProject00357123 */ = {
 			isa = PBXGroup;
 			children = (
+				6AE0C44A200C952F008419AF /* physics.json */,
 				6A10A78A200BEB9A007C56F1 /* L2DTargetPoint.cpp */,
 				6A10A78B200BEB9A007C56F1 /* L2DTargetPoint.h */,
 				6AEADF76200A6AB1001591A4 /* idle */,
@@ -361,6 +364,7 @@
 				6AEADF77200A6AB1001591A4 /* idle in Resources */,
 				6AE1B500200869FD00097F15 /* emilia.moc in Resources */,
 				6AE1B50420086A1600097F15 /* kanna.2048 in Resources */,
+				6AE0C44B200C952F008419AF /* physics.json in Resources */,
 				6AE1B4FF200869FD00097F15 /* emilia.2048 in Resources */,
 				6AE1B4F02008624500097F15 /* Riko.2048 in Resources */,
 				6AE1B50320086A1600097F15 /* kanna.moc in Resources */,
