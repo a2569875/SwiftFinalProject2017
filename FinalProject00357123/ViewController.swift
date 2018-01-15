@@ -365,8 +365,6 @@ class ViewController: GLKViewController {
         let dragX = dragPt.x
         let dragY = dragPt.y
         
-        print("getted \(dragX), \(dragY)")
-        
         live2DModel.addParam(Live2DParamPropertyKeys.AngleX, value: (CGFloat)(dragX * 30))//-30到30
         live2DModel.addParam(Live2DParamPropertyKeys.AngleY, value: (CGFloat)(dragY * 30))
         

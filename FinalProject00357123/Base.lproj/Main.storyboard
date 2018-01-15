@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Prepare Show Controller-->
         <scene sceneID="dQk-Nt-Ygk">
             <objects>
-                <viewController id="9B9-7F-Ue3" sceneMemberID="viewController">
+                <viewController id="9B9-7F-Ue3" customClass="PrepareShowController" customModule="FinalProject00357123" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ywb-Rn-QFm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELM-Ii-RwL">
                                 <rect key="frame" x="16" y="44" width="343" height="734"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="78"/>
+                                <state key="normal" title="顯示角色"/>
                                 <connections>
                                     <segue destination="ImV-8B-zDa" kind="show" id="6Ci-Zv-QCI"/>
                                 </connections>
@@ -30,6 +31,9 @@
                         <viewLayoutGuide key="safeArea" id="bN7-Vs-EPN"/>
                     </view>
                     <navigationItem key="navigationItem" id="fqv-Rp-RYD"/>
+                    <connections>
+                        <outlet property="show_the_char" destination="ELM-Ii-RwL" id="iX6-ax-Qmy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOS-Bm-sLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,6 +89,10 @@
                                     <segue destination="83L-rg-gAD" kind="show" id="diQ-pr-QLk"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FullNanachi" translatesAutoresizingMaskIntoConstraints="NO" id="hxM-Qy-O0D">
+                                <rect key="frame" x="67" y="148" width="240" height="395"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ww1-zU-lv5"/>
@@ -618,6 +626,7 @@
                 <tabBarController title="主畫面" automaticallyAdjustsScrollViewInsets="NO" id="ow5-OY-V0G" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dS9-gR-OEc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -631,11 +640,11 @@
             </objects>
             <point key="canvasLocation" x="-881" y="631"/>
         </scene>
-        <!--Item-->
+        <!--互動角色-->
         <scene sceneID="TyZ-SH-Bf0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AbY-6u-NUp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="rjS-8o-OCc"/>
+                    <tabBarItem key="tabBarItem" title="互動角色" id="rjS-8o-OCc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lLn-a1-NWL">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -652,6 +661,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FullNanachi" width="705" height="747"/>
         <image name="aqua" width="288" height="266"/>
         <image name="emilla" width="342" height="316"/>
         <image name="head" width="255" height="250"/>

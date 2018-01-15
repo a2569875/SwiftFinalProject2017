@@ -70,6 +70,9 @@ class SelectMyCharactorChooseController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         loadded_setting.selectid = indexPath.row
         GobalSetting.saveToFile(settings: loadded_setting)
+        if let lmyCharactors = Charactor.readFromFile() {
+            self.myCharactors = lmyCharactors
+        }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
