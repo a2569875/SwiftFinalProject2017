@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOS-Bm-sLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="943" y="839"/>
+            <point key="canvasLocation" x="1084" y="859"/>
         </scene>
         <!--GLKit View Controller-->
         <scene sceneID="Adv-8x-Qok">
@@ -76,7 +76,7 @@
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l75-DI-1xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1794.4000000000001" y="839.40886699507394"/>
+            <point key="canvasLocation" x="2353" y="859"/>
         </scene>
         <!--主頁-->
         <scene sceneID="EMC-5A-WrL">
@@ -175,7 +175,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJv-h6-MHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-855" y="1412"/>
+            <point key="canvasLocation" x="-1082" y="859"/>
         </scene>
         <!--我的角色-->
         <scene sceneID="Eq3-Av-ADl">
@@ -799,7 +799,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPB-gg-zJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-881" y="631"/>
+            <point key="canvasLocation" x="-1082" y="98"/>
         </scene>
         <!--互動角色-->
         <scene sceneID="TyZ-SH-Bf0">
@@ -818,7 +818,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cvn-Im-R5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="839"/>
+            <point key="canvasLocation" x="-82" y="859"/>
         </scene>
     </scenes>
     <resources>
@@ -835,6 +835,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eAe-Kn-2DQ"/>
-        <segue reference="DH8-cF-xl1"/>
+        <segue reference="6Ci-Zv-QCI"/>
     </inferredMetricsTieBreakers>
 </document>

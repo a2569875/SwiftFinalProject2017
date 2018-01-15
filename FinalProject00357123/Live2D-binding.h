@@ -11,7 +11,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <SceneKit/SceneKit.h>
 
-//Live2D 程式庫的初始雨解構
+//Live2D 程式庫的初始與解構
 @interface Live2D : NSObject
     + (void)initL2D;
     + (void)dispose;
