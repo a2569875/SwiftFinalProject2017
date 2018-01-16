@@ -137,9 +137,7 @@ class ViewController: GLKViewController {
         guard let the_texture = texture_id else {
             return
         }
-        
-       
-        
+
         glGetIntegerv( GLenum( GL_MATRIX_MODE ), &ogl )
         glPushMatrix()
  
