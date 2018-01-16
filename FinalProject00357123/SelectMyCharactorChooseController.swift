@@ -21,8 +21,6 @@ class SelectMyCharactorChooseController: UITableViewController {
         
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

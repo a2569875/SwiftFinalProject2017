@@ -174,7 +174,7 @@
                             <outlet property="delegate" destination="KfV-BG-4gM" id="mQr-xu-g4P"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="選擇" id="Beg-by-mhd"/>
+                    <tabBarItem key="tabBarItem" title="選擇" image="ic_list" id="Beg-by-mhd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJv-h6-MHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -808,7 +808,7 @@
         <scene sceneID="TVO-51-VS7">
             <objects>
                 <navigationController title="主選單" automaticallyAdjustsScrollViewInsets="NO" id="YeH-z4-TNH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="主頁" id="InM-FQ-xox"/>
+                    <tabBarItem key="tabBarItem" title="主頁" image="ic_home" id="InM-FQ-xox"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1AQ-cm-4av">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -847,7 +847,7 @@
         <scene sceneID="TyZ-SH-Bf0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AbY-6u-NUp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="互動角色" id="rjS-8o-OCc"/>
+                    <tabBarItem key="tabBarItem" title="互動角色" image="ic_accessibility" id="rjS-8o-OCc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lLn-a1-NWL">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -868,6 +868,9 @@
         <image name="aqua" width="288" height="266"/>
         <image name="emilla" width="342" height="316"/>
         <image name="head" width="255" height="250"/>
+        <image name="ic_accessibility" width="24" height="24"/>
+        <image name="ic_home" width="24" height="24"/>
+        <image name="ic_list" width="24" height="24"/>
         <image name="kanna" width="247" height="224"/>
         <image name="miitei" width="305" height="300"/>
         <image name="nanachi" width="414" height="351"/>
