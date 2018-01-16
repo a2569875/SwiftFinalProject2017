@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.78054374419999994" blue="0.31702720150000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ELM-Ii-RwL" firstAttribute="centerX" secondItem="Ywb-Rn-QFm" secondAttribute="centerX" id="BaA-Kc-ryh"/>
                             <constraint firstItem="ELM-Ii-RwL" firstAttribute="centerY" secondItem="Ywb-Rn-QFm" secondAttribute="centerY" id="Xf4-cY-OOd"/>
@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.78054374419999994" blue="0.31702720150000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ww1-zU-lv5" firstAttribute="bottom" secondItem="hxM-Qy-O0D" secondAttribute="bottom" constant="70" id="HSb-dg-uTU"/>
                             <constraint firstItem="ydC-Z8-5HA" firstAttribute="top" secondItem="hxM-Qy-O0D" secondAttribute="bottom" constant="20" id="PbP-0e-Rgb"/>
@@ -319,6 +319,10 @@
                                                 <constraint firstItem="re9-Er-Sgm" firstAttribute="centerX" secondItem="Q63-ge-vfv" secondAttribute="centerX" id="hvO-hQ-KjE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="cqY-Y8-gWR" appends="YES" id="GL8-KN-Wen"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="116" id="lWc-40-OX0">
                                         <rect key="frame" x="0.0" y="234" width="375" height="116"/>
@@ -362,6 +366,10 @@
                                                 <constraint firstItem="cPJ-aG-jD3" firstAttribute="trailing" secondItem="bW2-Hc-gt6" secondAttribute="trailingMargin" id="inO-cD-AKC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="tzB-Dz-mTn" appends="YES" id="EH3-5b-4et"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="64" id="hx0-PM-ieA">
                                         <rect key="frame" x="0.0" y="350" width="375" height="64"/>
@@ -384,6 +392,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="qSa-ps-kfM" id="Xg6-kc-59U"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -394,6 +405,10 @@
                                                 <constraint firstItem="HgS-Rb-da9" firstAttribute="centerY" secondItem="fgc-8U-5ny" secondAttribute="centerY" id="hEs-SN-ASq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="cju-mc-xNg" appends="YES" id="g0c-3a-28C"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="P3B-Ev-18I">
                                         <rect key="frame" x="0.0" y="414" width="375" height="44"/>
@@ -402,6 +417,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="fdI-Ic-X9O" appends="YES" id="cAs-lc-avb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -428,6 +447,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37I-JD-vBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AoF-uL-6Lg" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="cqY-Y8-gWR">
+                    <connections>
+                        <action selector="viewTapped:" destination="qSa-ps-kfM" id="9Vd-5x-Rcb"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="tzB-Dz-mTn">
+                    <connections>
+                        <action selector="viewTapped:" destination="qSa-ps-kfM" id="Iz7-d9-P2D"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="cju-mc-xNg">
+                    <connections>
+                        <action selector="viewTapped:" destination="qSa-ps-kfM" id="wbL-L7-xti"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="fdI-Ic-X9O">
+                    <connections>
+                        <action selector="viewTapped:" destination="qSa-ps-kfM" id="gty-jP-WVJ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2352.8000000000002" y="97.536945812807886"/>
         </scene>
@@ -835,6 +874,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eAe-Kn-2DQ"/>
-        <segue reference="DH8-cF-xl1"/>
+        <segue reference="6Ci-Zv-QCI"/>
     </inferredMetricsTieBreakers>
 </document>

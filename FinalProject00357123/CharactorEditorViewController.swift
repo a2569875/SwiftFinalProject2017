@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CharactorEditorViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CharactorEditorViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     
     var charactor_data : Charactor!
@@ -153,6 +153,20 @@ class CharactorEditorViewController: UITableViewController, UIImagePickerControl
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func viewTapped(_ sender: Any) {
+        view.endEditing(true)
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     func showAlert(message: String) {
         let controller = UIAlertController(title: "錯誤", message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -161,6 +175,8 @@ class CharactorEditorViewController: UITableViewController, UIImagePickerControl
         present(controller, animated: true, completion: nil)
         
     }
+    
+    
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         

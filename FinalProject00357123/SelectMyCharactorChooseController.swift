@@ -35,8 +35,29 @@ class SelectMyCharactorChooseController: UITableViewController {
         }else{
             self.loadded_setting = GobalSetting()
         }
+
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(SelectMyCharactorChooseController.refreshData), for: UIControlEvents.valueChanged)
+        self.refreshControl = refreshControl
     }
 
+    
+    @objc func refreshData() {
+        if let lmyCharactors = Charactor.readFromFile() {
+            self.myCharactors = lmyCharactors
+        }
+        
+        if let lmySetting = GobalSetting.readFromFile() {
+            self.loadded_setting = lmySetting
+        }else{
+            self.loadded_setting = GobalSetting()
+        }
+        
+         tableView.reloadData()
+        refreshControl?.endRefreshing()
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
