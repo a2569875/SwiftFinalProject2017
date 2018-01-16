@@ -33,6 +33,8 @@ class ViewController: GLKViewController {
     var live2DMotionArray: [Live2DMotionObj] = []
     var context: EAGLContext!
     
+    var texture_id : GLuint?
+    
     var m_loc : ModelLocation = ModelLocation(x: -1.4, y: 0.8, scx: 2.8, scy: -2.8)
     
     // MARK: - View Controller Life Cycle
@@ -65,11 +67,22 @@ class ViewController: GLKViewController {
         if use_setting {
             if let lmyCharactors = Charactor.readFromFile() {
                 if self.loadded_setting.selectid >= 0 && self.loadded_setting.selectid < lmyCharactors.count {
+                    if let m_name = lmyCharactors[self.loadded_setting.selectid].modelName{
+                        modelFile = m_name
+                        
+                        if let getted_img = lmyCharactors[self.loadded_setting.selectid].image_name, let getted_image = lmyCharactors[self.loadded_setting.selectid].image_image{
+                               texture_id = TextureSwift.getTextureId(getted_image, img_name: getted_img)
+                        }
+
+                    }else{
+                        ControllerUtil.showAlert(self, message: "未選擇角色 (預設將顯示娜娜奇)")
+                    }
+                }else{
                     ControllerUtil.showAlert(self, message: "未選擇角色 (預設將顯示娜娜奇)")
-                    modelFile = lmyCharactors[self.loadded_setting.selectid].modelName ?? "Nanachi";
                 }
             }
         }
+        
         
         self.context = EAGLContext(api: .openGLES2)
         if context == nil {
@@ -119,6 +132,72 @@ class ViewController: GLKViewController {
         //print("\(point.x),\(point.y)")
     }
 
+    func draw_background() {
+        var ogl: GLint = GLint( GL_NONE )
+        guard let the_texture = texture_id else {
+            return
+        }
+        
+       
+        
+        glGetIntegerv( GLenum( GL_MATRIX_MODE ), &ogl )
+        glPushMatrix()
+ 
+            glMatrixMode(GLenum(GL_PROJECTION))
+            glPushMatrix()
+                glLoadIdentity()
+                let size = self.view.bounds.size
+
+                glOrthof(0.0, Float(size.width), Float(size.height), 0, -1, 1)
+        
+                glMatrixMode(GLenum(GL_MODELVIEW))
+                glPushMatrix()
+        
+                    glEnableClientState(GLenum(GL_VERTEX_ARRAY));
+                    glEnableClientState(GLenum(GL_NORMAL_ARRAY));
+                    glEnableClientState(GLenum(GL_TEXTURE_COORD_ARRAY));
+        
+                    glColor4f(Float(0.0), Float(0.0), Float(1.0), Float(1.0))
+
+                    let vertices : [vector_double3] = [
+                        vector_double3(0.0,  100.0, 0.0),
+                        vector_double3(100.0,  100.0, 0.0),
+                        vector_double3(0.0, 0.0, 0.0),
+                        vector_double3( 100.0, 0.0, 0.0)
+                    ]
+                    let normals : [vector_double3] = [
+                        vector_double3(0.0, 0.0, 1.0),
+                        vector_double3(0.0, 0.0, 1.0),
+                        vector_double3(0.0, 0.0, 1.0),
+                        vector_double3(0.0, 0.0, 1.0)
+                    ]
+                    let texCoords : [GLfloat] = [
+                        0.0, 1.0,
+                        1.0, 1.0,
+                        0.0, 0.0,
+                        1.0, 0.0
+                    ]
+        
+                    glBindTexture(GLenum(GL_TEXTURE_2D), the_texture);
+                    glVertexPointer(3, GLenum(GL_FLOAT), 0, vertices);
+                    glNormalPointer(GLenum(GL_FLOAT), 0, normals);
+                    glTexCoordPointer(2, GLenum(GL_FLOAT), 0, texCoords);
+                    glDrawArrays(GLenum(GL_TRIANGLE_STRIP), 0, 4);
+        
+                    glDisableClientState(GLenum(GL_VERTEX_ARRAY));
+                    glDisableClientState(GLenum(GL_NORMAL_ARRAY));
+                    glDisableClientState(GLenum(GL_TEXTURE_COORD_ARRAY));
+                glMatrixMode(GLenum(GL_MODELVIEW))
+                glPopMatrix()
+        
+            glMatrixMode(GLenum(GL_PROJECTION))
+            glPopMatrix()
+
+        glMatrixMode(GLenum(ogl))
+        glPopMatrix()
+        
+        //glFinish()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -281,8 +360,13 @@ class ViewController: GLKViewController {
             live2Dphyics = Live2DPhysicsObj(phyPath: phyPath)
         }
         
+        //view.insertSubview(backgroundview, at: 0)
+        //view.sendSubview(toBack: backgroundview)
+        //view.insertSubview(backgroundview, belowSubview: UIView(GLKView))
+        //self.set
+
     }
-    
+
     func tearDownGL() {
         live2DModel = nil
         Live2D.dispose()
@@ -292,7 +376,8 @@ class ViewController: GLKViewController {
     // MARK: - GLKViewDelegate
     
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
-        glClearColor(0.65, 0.65, 0.65, 1.0)
+
+        glClearColor(0.996, 0.78, 0.31, 1.0)
         glClear(GLbitfield(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT))
         
         let size = UIScreen.main.bounds.size
@@ -341,6 +426,9 @@ class ViewController: GLKViewController {
         //更新並畫出
         live2DModel.update()
         live2DModel.draw()
+        
+        //draw_background()
+        
     }
 }
 

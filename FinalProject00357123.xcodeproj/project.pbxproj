@@ -19,6 +19,9 @@
 		6A10A78C200BEB9A007C56F1 /* L2DTargetPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A78A200BEB9A007C56F1 /* L2DTargetPoint.cpp */; };
 		6A10A78E200BEC34007C56F1 /* Live2DTargetPointObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10A78D200BEC34007C56F1 /* Live2DTargetPointObj.swift */; };
 		6A9D38412001BDE6007757FD /* ModelLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D38402001BDE6007757FD /* ModelLocation.swift */; };
+		6AD7E0A3200DEBD9008E91CE /* TextureForSwift.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6AD7E0A2200DEBD9008E91CE /* TextureForSwift.mm */; };
+		6AD7E0A7200DEE84008E91CE /* TextureChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AD7E0A5200DEE84008E91CE /* TextureChecker.cpp */; };
+		6AD7E0AA200E0FD1008E91CE /* TextureBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD7E0A9200E0FD1008E91CE /* TextureBinding.swift */; };
 		6AE0C44B200C952F008419AF /* physics.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE0C44A200C952F008419AF /* physics.json */; };
 		6AE0C44E200C9728008419AF /* L2DPhysics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0C44D200C9728008419AF /* L2DPhysics.cpp */; };
 		6AE0C451200C9A34008419AF /* Physics-binding.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0C450200C9A33008419AF /* Physics-binding.mm */; };
@@ -50,8 +53,8 @@
 		9E33220F1FBA0B2A00E186AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E33220D1FBA0B2A00E186AF /* Main.storyboard */; };
 		9E3322111FBA0B2A00E186AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E3322101FBA0B2A00E186AF /* Assets.xcassets */; };
 		9E3322141FBA0B2A00E186AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E3322121FBA0B2A00E186AF /* LaunchScreen.storyboard */; };
-		9E33221F1FBA0B2A00E186AF /* ARKit_Live2DTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33221E1FBA0B2A00E186AF /* ARKit_Live2DTests.swift */; };
-		9E33222A1FBA0B2A00E186AF /* ARKit_Live2DUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3322291FBA0B2A00E186AF /* ARKit_Live2DUITests.swift */; };
+		9E33221F1FBA0B2A00E186AF /* FinalProject00357123Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33221E1FBA0B2A00E186AF /* FinalProject00357123Tests.swift */; };
+		9E33222A1FBA0B2A00E186AF /* FinalProject00357123Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3322291FBA0B2A00E186AF /* FinalProject00357123Tests.swift */; };
 		9E3322381FBA0CAE00E186AF /* ContentUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3322371FBA0CAE00E186AF /* ContentUpdater.swift */; };
 		9E33229B1FBA38CB00E186AF /* Live2D-binding.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E3322941FBA38CA00E186AF /* Live2D-binding.mm */; };
 /* End PBXBuildFile section */
@@ -87,6 +90,12 @@
 		6A10A78B200BEB9A007C56F1 /* L2DTargetPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = L2DTargetPoint.h; sourceTree = "<group>"; };
 		6A10A78D200BEC34007C56F1 /* Live2DTargetPointObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live2DTargetPointObj.swift; sourceTree = "<group>"; };
 		6A9D38402001BDE6007757FD /* ModelLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLocation.swift; sourceTree = "<group>"; };
+		6AD7E0A2200DEBD9008E91CE /* TextureForSwift.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TextureForSwift.mm; sourceTree = "<group>"; };
+		6AD7E0A4200DEC44008E91CE /* UIImageToTextureObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImageToTextureObjC.h; sourceTree = "<group>"; };
+		6AD7E0A5200DEE84008E91CE /* TextureChecker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureChecker.cpp; sourceTree = "<group>"; };
+		6AD7E0A6200DEE84008E91CE /* TextureChecker.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureChecker.hpp; sourceTree = "<group>"; };
+		6AD7E0A8200E0B15008E91CE /* TextureObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextureObjC.h; sourceTree = "<group>"; };
+		6AD7E0A9200E0FD1008E91CE /* TextureBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureBinding.swift; sourceTree = "<group>"; };
 		6AE0C44A200C952F008419AF /* physics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = physics.json; sourceTree = SOURCE_ROOT; };
 		6AE0C44C200C9728008419AF /* L2DPhysics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = L2DPhysics.h; sourceTree = "<group>"; };
 		6AE0C44D200C9728008419AF /* L2DPhysics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = L2DPhysics.cpp; sourceTree = "<group>"; };
@@ -123,10 +132,10 @@
 		9E3322131FBA0B2A00E186AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E3322151FBA0B2A00E186AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E33221A1FBA0B2A00E186AF /* FinalProject00357123Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalProject00357123Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E33221E1FBA0B2A00E186AF /* ARKit_Live2DTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKit_Live2DTests.swift; sourceTree = "<group>"; };
+		9E33221E1FBA0B2A00E186AF /* FinalProject00357123Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProject00357123Tests.swift; sourceTree = "<group>"; };
 		9E3322201FBA0B2A00E186AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E3322251FBA0B2A00E186AF /* FinalProject00357123UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalProject00357123UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E3322291FBA0B2A00E186AF /* ARKit_Live2DUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKit_Live2DUITests.swift; sourceTree = "<group>"; };
+		9E3322291FBA0B2A00E186AF /* FinalProject00357123Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProject00357123Tests.swift; sourceTree = "<group>"; };
 		9E33222B1FBA0B2A00E186AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E3322371FBA0CAE00E186AF /* ContentUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUpdater.swift; sourceTree = "<group>"; };
 		9E3322941FBA38CA00E186AF /* Live2D-binding.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "Live2D-binding.mm"; sourceTree = "<group>"; };
@@ -183,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				6AE0C44A200C952F008419AF /* physics.json */,
+				6AD7E0A2200DEBD9008E91CE /* TextureForSwift.mm */,
 				6AE0C450200C9A33008419AF /* Physics-binding.mm */,
 				6AE0C44D200C9728008419AF /* L2DPhysics.cpp */,
 				6AE0C44C200C9728008419AF /* L2DPhysics.h */,
@@ -233,6 +243,11 @@
 				6AE0C44F200C979A008419AF /* L2DPhysicsHeader.h */,
 				6AE0C452200CA024008419AF /* Live2DPhysicsObj.swift */,
 				6AE0C454200CBEEF008419AF /* PrepareShowController.swift */,
+				6AD7E0A4200DEC44008E91CE /* UIImageToTextureObjC.h */,
+				6AD7E0A5200DEE84008E91CE /* TextureChecker.cpp */,
+				6AD7E0A6200DEE84008E91CE /* TextureChecker.hpp */,
+				6AD7E0A8200E0B15008E91CE /* TextureObjC.h */,
+				6AD7E0A9200E0FD1008E91CE /* TextureBinding.swift */,
 			);
 			path = FinalProject00357123;
 			sourceTree = "<group>";
@@ -240,7 +255,7 @@
 		9E33221D1FBA0B2A00E186AF /* FinalProject00357123Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9E33221E1FBA0B2A00E186AF /* ARKit_Live2DTests.swift */,
+				9E33221E1FBA0B2A00E186AF /* FinalProject00357123Tests.swift */,
 				9E3322201FBA0B2A00E186AF /* Info.plist */,
 			);
 			path = FinalProject00357123Tests;
@@ -249,7 +264,7 @@
 		9E3322281FBA0B2A00E186AF /* FinalProject00357123UITests */ = {
 			isa = PBXGroup;
 			children = (
-				9E3322291FBA0B2A00E186AF /* ARKit_Live2DUITests.swift */,
+				9E3322291FBA0B2A00E186AF /* FinalProject00357123Tests.swift */,
 				9E33222B1FBA0B2A00E186AF /* Info.plist */,
 			);
 			path = FinalProject00357123UITests;
@@ -411,11 +426,14 @@
 				6A10A783200BC1E5007C56F1 /* GobalSetting.swift in Sources */,
 				6AE91BE22005FF2D00DB969E /* MainViewController.swift in Sources */,
 				6A10A785200BC6E1007C56F1 /* TestFunctions.swift in Sources */,
+				6AD7E0A7200DEE84008E91CE /* TextureChecker.cpp in Sources */,
+				6AD7E0AA200E0FD1008E91CE /* TextureBinding.swift in Sources */,
 				6AE0C451200C9A34008419AF /* Physics-binding.mm in Sources */,
 				9E3322381FBA0CAE00E186AF /* ContentUpdater.swift in Sources */,
 				6A10A77F200BB869007C56F1 /* SelectMyCharactorChooseController.swift in Sources */,
 				6AE91BE02005FF0E00DB969E /* Charactor.swift in Sources */,
 				6A9D38412001BDE6007757FD /* ModelLocation.swift in Sources */,
+				6AD7E0A3200DEBD9008E91CE /* TextureForSwift.mm in Sources */,
 				9E33220C1FBA0B2A00E186AF /* ViewController.swift in Sources */,
 				9E33220A1FBA0B2A00E186AF /* AppDelegate.swift in Sources */,
 				6AE0C455200CBEEF008419AF /* PrepareShowController.swift in Sources */,
@@ -439,7 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E33221F1FBA0B2A00E186AF /* ARKit_Live2DTests.swift in Sources */,
+				9E33221F1FBA0B2A00E186AF /* FinalProject00357123Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E33222A1FBA0B2A00E186AF /* ARKit_Live2DUITests.swift in Sources */,
+				9E33222A1FBA0B2A00E186AF /* FinalProject00357123Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

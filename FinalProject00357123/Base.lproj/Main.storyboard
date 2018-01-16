@@ -48,7 +48,7 @@
         <scene sceneID="Adv-8x-Qok">
             <objects>
                 <glkViewController preferredFramesPerSecond="30" id="ImV-8B-zDa" customClass="ViewController" customModule="FinalProject00357123" customModuleProvider="target" sceneMemberID="viewController">
-                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" drawableDepthFormat="24" enableSetNeedsDisplay="NO" id="wfU-ON-tyV">
+                    <glkView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" drawableDepthFormat="24" enableSetNeedsDisplay="NO" id="wfU-ON-tyV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -121,7 +121,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AJe-HQ-6pb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.78054374419999994" blue="0.31702720150000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="0.89793927265337536" blue="0.19086978824731438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCharactorItem" rowHeight="86" id="V4L-IF-4Ms" customClass="SelectMyCharactorCell" customModule="FinalProject00357123" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="86"/>
@@ -147,9 +148,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" red="1" green="0.78054374419999994" blue="0.31702720150000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                     </subviews>
+                                    <color key="backgroundColor" red="1" green="0.78054374419999994" blue="0.31702720150000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="6hr-1s-fJi" firstAttribute="leading" secondItem="M36-nD-69O" secondAttribute="trailing" constant="8" symbolic="YES" id="4oT-Mb-oVQ"/>
                                         <constraint firstItem="M36-nD-69O" firstAttribute="top" secondItem="OxY-gn-Tom" secondAttribute="topMargin" id="BH8-Jr-9x2"/>
@@ -160,6 +162,7 @@
                                         <constraint firstItem="M36-nD-69O" firstAttribute="bottom" secondItem="OxY-gn-Tom" secondAttribute="bottomMargin" id="zoU-Lv-Whb"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.78054374419999994" blue="0.31702720150000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="CharName" destination="Mhm-Sq-GM0" id="7VM-1B-xPY"/>
                                     <outlet property="ModelImage" destination="M36-nD-69O" id="hp4-19-McB"/>
@@ -874,6 +877,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eAe-Kn-2DQ"/>
-        <segue reference="6Ci-Zv-QCI"/>
+        <segue reference="DH8-cF-xl1"/>
     </inferredMetricsTieBreakers>
 </document>

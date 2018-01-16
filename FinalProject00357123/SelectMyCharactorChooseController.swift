@@ -26,6 +26,8 @@ class SelectMyCharactorChooseController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.backgroundView?.backgroundColor = self.tableView.backgroundColor
+        
         if let lmyCharactors = Charactor.readFromFile() {
             self.myCharactors = lmyCharactors
         }

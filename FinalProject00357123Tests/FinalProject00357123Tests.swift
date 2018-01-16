@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import ARKit_Live2D
+@testable import FinalProject00357123
 
-class ARKit_Live2DTests: XCTestCase {
+class FinalProject00357123Tests: XCTestCase {
     
     override func setUp() {
         super.setUp()

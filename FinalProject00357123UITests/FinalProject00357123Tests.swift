@@ -8,7 +8,7 @@
 
 import XCTest
 
-class ARKit_Live2DUITests: XCTestCase {
+class FinalProject00357123Tests: XCTestCase {
         
     override func setUp() {
         super.setUp()
