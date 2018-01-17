@@ -80,6 +80,8 @@ class ViewController: GLKViewController {
                 }else{
                     ControllerUtil.showAlert(self, message: "未選擇角色 (預設將顯示娜娜奇)")
                 }
+            }else{
+                ControllerUtil.showAlert(self, message: "未定義角色 (預設將顯示娜娜奇)")
             }
         }
         
